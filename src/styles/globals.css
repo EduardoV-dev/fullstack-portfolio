@@ -1,3 +1,80 @@
+/*
+*
+*   SUMMARY: 
+*
+*   1. Font Faces
+*   2. CSS Variables
+*   3. Tailwind Rules
+*   4. Tailwind Styling.
+*
+*/
+
+/* ==== 1. Font Faces ==== */
+
+/* Poppins Font */
+
+@font-face {
+    font-family: 'poppins';
+    src: url(./fonts/poppins/Poppins-Regular.ttf);
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'poppins';
+    src: url(./fonts/poppins/Poppins-Medium.ttf);
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'poppins';
+    src: url(./fonts/poppins/Poppins-SemiBold.ttf);
+    font-weight: 600;
+    font-display: swap;
+}
+
+/* Pixeloid Sans Font */
+
+@font-face {
+    font-family: 'pixeloid-sans';
+    src: url(./fonts/pixeloid-sans/PixeloidSans.ttf);
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pixeloid-sans';
+    src: url(./fonts/pixeloid-sans/PixeloidSans-Bold.ttf);
+    font-weight: 700;
+    font-display: swap;
+}
+
+/* ==== 2. CSS Variables ==== */
+
+:root {
+    --color-primary: #5d67c8;
+    --color-text: #333;
+    --bg-color: #f1f2ff;
+    --bg-color-lighter: #fff;
+}
+
+html.dark {
+    --color-text: #f1f2ff;
+    --bg-color: #3a3a3a;
+    --bg-color-lighter: #333;
+}
+
+/* ==== 3. Tailwind Rules ==== */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ==== 4. Tailwind Styling ==== */
+
+@layer base {
+    body {
+        @apply bg-main-bg font-poppins font-normal;
+    }
+}
