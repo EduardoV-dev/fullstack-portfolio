@@ -6,6 +6,7 @@
 *   2. CSS Variables
 *   3. Tailwind Rules
 *   4. Tailwind Styling.
+*   5. Custom Styles.
 *
 */
 
@@ -53,16 +54,21 @@
 /* ==== 2. CSS Variables ==== */
 
 :root {
+    --color-white: #f1f2ff;
+    --color-black: #333;
+    --color-red: #ff2d75;
+    --color-green: #4fc3dc;
+
     --color-primary: #5d67c8;
-    --color-text: #333;
-    --bg-color: #f1f2ff;
+    --color-text: var(--color-black);
+    --bg-color: var(--color-white);
     --bg-color-lighter: #fff;
 }
 
 html.dark {
-    --color-text: #f1f2ff;
+    --color-text: var(--color-white);
     --bg-color: #3a3a3a;
-    --bg-color-lighter: #333;
+    --bg-color-lighter: var(--color-black);
 }
 
 /* ==== 3. Tailwind Rules ==== */
@@ -77,4 +83,28 @@ html.dark {
     body {
         @apply bg-main-bg font-poppins font-normal;
     }
+}
+
+/* ==== 5. Custom Styles ==== */
+
+/** __next is being used as the layout container for `Layout` component */
+#__next {
+    @apply min-h-screen grid gap-4;
+    grid-template-rows: auto 1fr auto;
+}
+
+.icon-size {
+    @apply w-7;
+}
+
+.btn {
+    @apply p-2 px-5 rounded-sm font-semibold transition;
+}
+
+.btn-primary {
+    @apply bg-primary hover:brightness-90 active:brightness-110;
+}
+
+.btn-outlined-primary {
+    @apply border border-text-color text-text-color hover:border-primary hover:bg-primary hover:text-white;
 }

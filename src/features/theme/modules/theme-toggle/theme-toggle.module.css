@@ -1,0 +1,23 @@
+.theme-toggle {
+    @apply scale-110 transition hover:scale-125;
+}
+
+.theme-toggle:is(:hover, :focus) svg path {
+    @apply fill-primary stroke-primary;
+}
+
+.theme-toggle:is(:hover, :focus) svg path:last-of-type {
+    @apply fill-white;
+}
+
+.theme-toggle:active {
+    @apply animate-ping;
+}
+
+.theme-toggle svg path {
+    @apply stroke-text-color;
+}
+
+.theme-toggle svg path:last-of-type {
+    @apply fill-text-color;
+}

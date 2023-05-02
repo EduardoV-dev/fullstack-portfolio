@@ -1,0 +1,29 @@
+.container {
+    @apply fixed -z-10 w-full h-screen overflow-hidden;
+}
+
+.particles {
+    @apply relative flex flex-wrap;
+}
+
+.particles > span {
+    @apply relative w-4 h-4 bg-green my-0 mx-1 rounded-full opacity-30;
+    box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--index));
+}
+
+.particles > span:nth-of-type(even) {
+    @apply bg-red opacity-30;
+    box-shadow: 0 0 0 10px #ff2d7544, 0 0 30px #ff2d75, 0 0 70px #ff2d75;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+}

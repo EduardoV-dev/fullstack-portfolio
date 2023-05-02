@@ -1,0 +1,84 @@
+/* Shared styles */
+
+.networks-and-controls-container {
+    @apply flex flex-wrap gap-6 items-center;
+}
+
+/* Header Component Styles */
+
+.header {
+    @apply sticky top-0 bg-main-bg-lighter;
+}
+
+.content {
+    @apply container flex flex-row-reverse items-center justify-between h-16 lg:flex-row;
+}
+
+.logo {
+    @apply text-xl text-text-color font-semibold transition hover:text-primary lg:text-center 2xl:text-left 2xl:-translate-x-2/4;
+}
+
+.networks-and-controls-container.desktop {
+    @apply hidden lg:flex;
+}
+
+.networks-and-controls-container .networks-and-controls-container__group {
+    @apply flex flex-wrap gap-4 items-center;
+}
+
+.networks-and-controls-container__group .icon-fill path {
+    @apply fill-text-color;
+}
+
+.networks-and-controls-container__group .icon-stroke path {
+    @apply stroke-text-color;
+}
+
+/* Navbar Component Styles */
+
+.nav-list {
+    @apply w-[calc(100%_-_2rem)] max-w-xs fixed top-1/4 left-2/4 -translate-x-2/4 -translate-y-2/4 flex flex-col gap-2 items-center bg-main-bg-lighter py-6 shadow rounded-sm opacity-0 scale-0 transition lg:w-auto lg:max-w-none lg:relative lg:top-0 lg:left-0 lg:translate-x-0 lg:translate-y-0 lg:flex-row lg:gap-8 lg:bg-transparent lg:py-0 lg:shadow-none lg:rounded-none lg:opacity-100 lg:scale-100;
+}
+
+.nav-list.open {
+    @apply opacity-100 scale-95;
+}
+
+.nav-list__item {
+    @apply font-medium text-text-color transition hover:text-primary;
+}
+
+.nav-list__item.active {
+    @apply text-primary font-semibold;
+}
+
+.networks-and-controls-container.mobile {
+    @apply mt-6 lg:hidden;
+}
+
+.menu-btn {
+    @apply flex flex-col justify-center gap-2 items-center transition lg:hidden;
+}
+
+.menu-btn:is(:hover, :focus)
+    :is(.menu-btn__center-line, .menu-btn__top-line, .menu-btn__bottom-line) {
+    @apply bg-primary translate-y-0;
+}
+
+.menu-btn__center-line,
+.menu-btn__top-line,
+.menu-btn__bottom-line {
+    @apply bg-text-color rounded-sm w-10 h-1 transition;
+}
+
+.menu-btn.open .menu-btn__center-line {
+    @apply -translate-x-8 opacity-0;
+}
+
+.menu-btn.open .menu-btn__top-line {
+    @apply rotate-45 translate-y-3 scale-75;
+}
+
+.menu-btn.open .menu-btn__bottom-line {
+    @apply -rotate-45 -translate-y-3 scale-75;
+}
