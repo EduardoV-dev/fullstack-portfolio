@@ -83,6 +83,10 @@ html.dark {
     body {
         @apply bg-main-bg font-poppins font-normal;
     }
+
+    button {
+        @apply block cursor-default;
+    }
 }
 
 /* ==== 5. Custom Styles ==== */
@@ -102,7 +106,7 @@ html.dark {
 }
 
 .btn-primary {
-    @apply bg-primary hover:brightness-90 active:brightness-110;
+    @apply bg-primary hover:brightness-90 active:brightness-110 text-white;
 }
 
 .btn-outlined-primary {

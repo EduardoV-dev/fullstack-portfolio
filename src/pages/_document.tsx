@@ -5,6 +5,7 @@ const Document = (): JSX.Element => (
         <Head />
         <body>
             <Main />
+            <div id="portal" />
             <NextScript />
         </body>
     </Html>

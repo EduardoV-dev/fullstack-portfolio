@@ -1,0 +1,20 @@
+.modal {
+    @apply fixed z-20 left-1/2 -translate-x-1/2 translate-y-1/2 w-[calc(100%_-_1.5rem)] max-w-md bg-main-bg-lighter p-6 rounded-sm shadow opacity-0 scale-0 transition;
+    top: 22%;
+}
+
+.modal__footer {
+    @apply mt-8 flex flex-wrap gap-2 justify-center items-center;
+}
+
+.modal.displayed {
+    @apply -translate-y-1/2 opacity-100 scale-100;
+}
+
+.backdrop {
+    @apply hidden w-full h-full fixed z-10 top-0 left-0 cursor-default;
+}
+
+.backdrop.displayed {
+    @apply block;
+}

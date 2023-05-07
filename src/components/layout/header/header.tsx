@@ -3,10 +3,10 @@ import Link from 'next/link';
 import React from 'react';
 
 import GithubIcon from '@/assets/svg/github.svg';
-import GlobeIcon from '@/assets/svg/globe.svg';
 import LinkedInIcon from '@/assets/svg/linkedin.svg';
 import MailIcon from '@/assets/svg/mail.svg';
-import { ThemeToggle } from '@/features/theme';
+import { LanguageSelector } from '@/features/language';
+import { ThemeToggler } from '@/features/theme';
 
 import styles from './header.module.css';
 import { NavLinkItem } from './header.types';
@@ -47,11 +47,8 @@ export const Header = (): JSX.Element => {
                 className={styles['networks-and-controls-container__group']}
                 data-testid="app-controls"
             >
-                <button type="button">
-                    <GlobeIcon className={clsx('icon-size', styles['icon-fill'])} />
-                </button>
-
-                <ThemeToggle />
+                <LanguageSelector />
+                <ThemeToggler />
             </div>
         </>
     );

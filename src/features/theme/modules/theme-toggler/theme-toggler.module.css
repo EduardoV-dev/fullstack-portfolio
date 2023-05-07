@@ -2,11 +2,11 @@
     @apply scale-110 transition hover:scale-125;
 }
 
-.theme-toggle:is(:hover, :focus) svg path {
+.theme-toggle:is(:hover, :focus, .dark) svg path {
     @apply fill-primary stroke-primary;
 }
 
-.theme-toggle:is(:hover, :focus) svg path:last-of-type {
+.theme-toggle:is(:hover, :focus, .dark) svg path:last-of-type {
     @apply fill-white;
 }
 

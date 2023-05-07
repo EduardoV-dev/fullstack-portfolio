@@ -15,7 +15,7 @@
 }
 
 .logo {
-    @apply text-xl text-text-color font-semibold transition hover:text-primary lg:text-center 2xl:text-left 2xl:-translate-x-2/4;
+    @apply text-xl text-text-color font-semibold transition hover:text-primary lg:text-center 2xl:text-left 2xl:-translate-x-full;
 }
 
 .networks-and-controls-container.desktop {

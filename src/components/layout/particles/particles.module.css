@@ -8,6 +8,7 @@
 
 .particles > span {
     @apply relative w-4 h-4 bg-green my-0 mx-1 rounded-full opacity-30;
+
     box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
     animation: animate 15s linear infinite;
     animation-duration: calc(125s / var(--index));

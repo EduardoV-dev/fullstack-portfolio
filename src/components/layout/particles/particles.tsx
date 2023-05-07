@@ -3,11 +3,11 @@ import { debounce } from 'throttle-debounce';
 
 import styles from './particles.module.css';
 
-interface ParticlesCSS extends React.CSSProperties {
+interface ParticleCSS extends React.CSSProperties {
     '--index': number;
 }
 
-const PARTICLE_WIDTH = 16;
+const PARTICLE_WIDTH_IN_PX = 16;
 const DEBOUNCE_DELAY_IN_MS = 400;
 
 const generateRandomNumberBetween10And30 = (): number => Math.ceil(Math.random() * 20 + 10);
@@ -20,12 +20,12 @@ const generateRandomNumberBetween10And30 = (): number => Math.ceil(Math.random()
  */
 export const Particles = React.memo((): JSX.Element => {
     const [particles, setParticles] = React.useState<number>(
-        () => window.innerWidth / PARTICLE_WIDTH,
+        () => window.innerWidth / PARTICLE_WIDTH_IN_PX,
     );
 
     React.useEffect(() => {
         const calculateRequiredParticlesToFillScreen = debounce(DEBOUNCE_DELAY_IN_MS, (): void =>
-            setParticles(window.innerWidth / PARTICLE_WIDTH),
+            setParticles(window.innerWidth / PARTICLE_WIDTH_IN_PX),
         );
 
         window.addEventListener('resize', calculateRequiredParticlesToFillScreen);
@@ -36,7 +36,7 @@ export const Particles = React.memo((): JSX.Element => {
     const ParticleItems: JSX.Element[] = [...new Array(Math.ceil(particles))].map(() => (
         <span
             key={crypto.randomUUID()}
-            style={{ '--index': generateRandomNumberBetween10And30() } as ParticlesCSS}
+            style={{ '--index': generateRandomNumberBetween10And30() } as ParticleCSS}
         />
     ));
 

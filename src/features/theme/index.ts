@@ -1,1 +1,1 @@
-export * from './modules/theme-toggle';
+export * from './modules/theme-toggler';
